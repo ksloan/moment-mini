@@ -1,2 +1,5 @@
 # moment-mini
-Parse, validate, manipulate, and display dates in javascript. http://momentjs.com
+
+This package exposes [moment.min.js](https://github.com/moment/moment/blob/develop/min/moment.min.js) as an npm module so you can import/require the minified version of moment into your projects without the bloat of the locales.
+
+This package will follow the [moment.js releases](https://github.com/moment/moment/releases).
