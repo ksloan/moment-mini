@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/moment-mini.svg)](https://badge.fury.io/js/moment-mini)
+[![npm version](https://badge.fury.io/js/moment-mini.svg)](https://badge.fury.io/js/moment-mini) 
 
 # moment-mini
 
