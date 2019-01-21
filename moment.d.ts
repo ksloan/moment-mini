@@ -75,24 +75,24 @@ declare namespace moment {
     string |
     ((n: number, withoutSuffix: boolean,
       key: RelativeTimeKey, isFuture: boolean) => string)
-  );
+    );
   type RelativeTimeFuturePastVal = string | ((relTime: string) => string);
 
   interface RelativeTimeSpec {
-    future: RelativeTimeFuturePastVal;
-    past: RelativeTimeFuturePastVal;
-    s: RelativeTimeSpecVal;
-    ss: RelativeTimeSpecVal;
-    m: RelativeTimeSpecVal;
-    mm: RelativeTimeSpecVal;
-    h: RelativeTimeSpecVal;
-    hh: RelativeTimeSpecVal;
-    d: RelativeTimeSpecVal;
-    dd: RelativeTimeSpecVal;
-    M: RelativeTimeSpecVal;
-    MM: RelativeTimeSpecVal;
-    y: RelativeTimeSpecVal;
-    yy: RelativeTimeSpecVal;
+    future?: RelativeTimeFuturePastVal;
+    past?: RelativeTimeFuturePastVal;
+    s?: RelativeTimeSpecVal;
+    ss?: RelativeTimeSpecVal;
+    m?: RelativeTimeSpecVal;
+    mm?: RelativeTimeSpecVal;
+    h?: RelativeTimeSpecVal;
+    hh?: RelativeTimeSpecVal;
+    d?: RelativeTimeSpecVal;
+    dd?: RelativeTimeSpecVal;
+    M?: RelativeTimeSpecVal;
+    MM?: RelativeTimeSpecVal;
+    y?: RelativeTimeSpecVal;
+    yy?: RelativeTimeSpecVal;
   }
 
   interface LongDateFormatSpec {
@@ -198,6 +198,8 @@ declare namespace moment {
     toISOString(): string;
     toJSON(): string;
 
+    isValid(): boolean;
+
     /**
      * @deprecated since version 2.8.0
      */
@@ -291,7 +293,7 @@ declare namespace moment {
       "minute" | "minutes" | "m" |
       "second" | "seconds" | "s" |
       "millisecond" | "milliseconds" | "ms"
-    );
+      );
 
     type _quarter = "quarter" | "quarters" | "Q";
     type _isoWeek = "isoWeek" | "isoWeeks" | "W";
@@ -300,7 +302,7 @@ declare namespace moment {
 
     type DurationAs = Base;
 
-    type StartOf = Base | _quarter | _isoWeek | _date;
+    type StartOf = Base | _quarter | _isoWeek | _date | void; // null
 
     type Diff = Base | _quarter;
 
@@ -716,16 +718,16 @@ declare namespace moment {
 
   export var defaultFormat: string;
   export var defaultFormatUtc: string;
-  
-  export var HTML5_FMT: { 
+
+  export var HTML5_FMT: {
     DATETIME_LOCAL: string,
     DATETIME_LOCAL_SECONDS: string,
     DATETIME_LOCAL_MS: string,
-    DATE: string,                           
-    TIME: string,                                 
-    TIME_SECONDS: string,                      
-    TIME_MS: string,                        
-    WEEK: string,                           
+    DATE: string,
+    TIME: string,
+    TIME_SECONDS: string,
+    TIME_MS: string,
+    WEEK: string,
     MONTH: string
   };
 
